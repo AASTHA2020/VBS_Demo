@@ -1,0 +1,39 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light;
+}
+
+html,
+body {
+  @apply bg-white text-slate-900 antialiased;
+}
+
+body {
+  @apply min-h-screen;
+}
+
+main {
+  @apply min-h-screen;
+}
+
+.gradient-border {
+  border-radius: 9999px;
+  background: linear-gradient(120deg, #08A0E9, #42AA32, #F0B300);
+  padding: 1px;
+}
+
+.card-surface {
+  @apply bg-white/90 backdrop-blur-sm shadow-subtle border border-slate-100;
+}
+
+.section-padding {
+  @apply px-6 sm:px-10 lg:px-16 py-12 sm:py-16 lg:py-20;
+}
+
+.max-content-width {
+  @apply max-w-6xl mx-auto;
+}
+
