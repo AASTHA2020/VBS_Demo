@@ -9,16 +9,18 @@ const config: Config = {
     extend: {
       colors: {
         vbs: {
-          // Logo colors extracted from VBS logo SVG
+          // Logo colors extracted from VBS logo SVG - Enhanced for better contrast
           red: "#e33232", // Primary red for "Virtual Building Studio" text (user specified)
           redAlt: "#DC0000", // Alternative red from logo
-          redDark: "#D70416", // Dark red from logo
+          redDark: "#C00000", // Darker red for better contrast
           blue: "#08A0E9", // Primary blue from logo text
           blueAlt: "#2299D6", // Secondary blue from logo
+          blueDark: "#0077B6", // Darker blue for better contrast
           green: "#42AA32", // Green from logo
-          greenDark: "#225919", // Dark green from logo
+          greenDark: "#2D7A1E", // Darker green for better contrast
           yellow: "#F0B300", // Yellow/orange from logo
-          black: "#000004", // Black from logo
+          yellowDark: "#CC9900", // Darker yellow for better contrast
+          black: "#000000", // Pure black for maximum contrast
           // Neutral colors for clean design
           charcoal: "#1E252F",
           light: "#F5F7FA",

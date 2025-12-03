@@ -3,7 +3,6 @@
 import { useState } from "react";
 import Link from "next/link";
 import Image from "next/image";
-import { motion, AnimatePresence } from "framer-motion";
 
 const navItems = [
   { label: "What We Do", href: "#what-we-do" },
@@ -18,15 +17,15 @@ export function Header() {
 
   return (
     <header className="sticky top-0 z-40 border-b border-slate-200/60 bg-white/98 backdrop-blur-sm">
-      <div className="px-4 sm:px-6 lg:px-16">
-        <div className="max-w-7xl mx-auto flex items-center justify-between gap-4 h-16">
+      <div className="px-4 sm:px-6 lg:px-8">
+        <div className="max-w-[1600px] mx-auto flex items-center justify-between gap-4 h-16">
           <Link href="/" className="flex items-center gap-3 flex-shrink-0" aria-label="Virtual Building Studio home">
-            <div className="relative h-7 sm:h-8 w-auto">
+            <div className="relative h-8 sm:h-10 w-auto">
               <Image
                 src="/vbs-logo.svg"
                 alt="Virtual Building Studio"
-                width={149}
-                height={28}
+                width={180}
+                height={35}
                 className="h-full w-auto"
                 priority
               />
@@ -44,14 +43,12 @@ export function Header() {
             ))}
           </nav>
           <div className="flex items-center gap-3">
-            <motion.a
+            <a
               href="#final-cta"
-              className="hidden sm:inline-flex items-center justify-center rounded-md bg-vbs-red px-4 py-2 text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2"
-              whileHover={{ y: -1 }}
-              whileTap={{ scale: 0.98 }}
+              className="hidden sm:inline-flex items-center justify-center rounded-md bg-gradient-to-r from-vbs-red to-vbs-redDark px-4 py-2 text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition hover:from-vbs-redDark hover:to-vbs-red shadow-md hover:shadow-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2"
             >
               Get Started
-            </motion.a>
+            </a>
             <button
               type="button"
               onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -70,36 +67,29 @@ export function Header() {
           </div>
         </div>
       </div>
-      <AnimatePresence>
-        {mobileMenuOpen && (
-          <motion.nav
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: "auto" }}
-            exit={{ opacity: 0, height: 0 }}
-            className="lg:hidden border-t border-slate-200 bg-white"
-          >
-            <div className="px-4 py-4 space-y-3">
-              {navItems.map((item) => (
-                <Link
-                  key={item.label}
-                  href={item.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className="block text-slate-700 hover:text-vbs-red font-medium transition-colors py-2"
-                >
-                  {item.label}
-                </Link>
-              ))}
+      {mobileMenuOpen && (
+        <nav className="lg:hidden border-t border-slate-200 bg-white">
+          <div className="px-4 py-4 space-y-3">
+            {navItems.map((item) => (
               <Link
-                href="#final-cta"
+                key={item.label}
+                href={item.href}
                 onClick={() => setMobileMenuOpen(false)}
-                className="block mt-4 text-center rounded-md bg-vbs-red px-4 py-2 text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition hover:bg-vbs-redDark"
+                className="block text-slate-700 hover:text-vbs-red font-medium transition-colors py-2"
               >
-                Get Started
+                {item.label}
               </Link>
-            </div>
-          </motion.nav>
-        )}
-      </AnimatePresence>
+            ))}
+            <Link
+              href="#final-cta"
+              onClick={() => setMobileMenuOpen(false)}
+              className="block mt-4 text-center rounded-md bg-gradient-to-r from-vbs-red to-vbs-redDark px-4 py-2 text-xs sm:text-sm font-semibold text-white whitespace-nowrap transition hover:from-vbs-redDark hover:to-vbs-red shadow-md"
+            >
+              Get Started
+            </Link>
+          </div>
+        </nav>
+      )}
     </header>
   );
 }
