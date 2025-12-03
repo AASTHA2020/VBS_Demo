@@ -15,6 +15,11 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: "/favicon.ico"
+  },
+  viewport: {
+    width: "device-width",
+    initialScale: 1,
+    maximumScale: 5
   }
 };
 
@@ -24,8 +29,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en">
-      <body>{children}</body>
+    <html lang="en" className="scroll-smooth">
+      <body className="antialiased">{children}</body>
     </html>
   );
 }

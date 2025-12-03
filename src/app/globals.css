@@ -6,9 +6,14 @@
   color-scheme: light;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 html,
 body {
   @apply bg-white text-slate-900 antialiased;
+  overflow-x: hidden;
 }
 
 body {
@@ -17,6 +22,17 @@ body {
 
 main {
   @apply min-h-screen;
+}
+
+/* Performance optimizations */
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+img, video {
+  max-width: 100%;
+  height: auto;
 }
 
 .gradient-border {
