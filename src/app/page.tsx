@@ -77,7 +77,7 @@ export default function HomePage() {
           className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-slate-50 to-white"
           aria-labelledby="segmentation-title"
         >
-          <div className="max-w-[1600px] mx-auto space-y-8 bg-gray-50">
+          <div className="max-w-[1600px] mx-auto space-y-8">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <h2
                 id="segmentation-title"
@@ -90,26 +90,29 @@ export default function HomePage() {
               </p>
             </div>
 
-            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-              <div className="animate-fade-in-up" style={{ animationDelay: "0.1s" }}>
+            <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3 auto-rows-fr">
+              <div className="animate-fade-in-up h-full" style={{ animationDelay: "0.1s" }}>
                 <ServiceCard
                   title="Architectural Production"
                   description="Remote architects for drafting and BIM documentation."
                   cta="Strengthen Architectural Production"
+                  image="/img1.avif"
                 />
               </div>
-              <div className="animate-fade-in-up" style={{ animationDelay: "0.2s" }}>
+              <div className="animate-fade-in-up h-full" style={{ animationDelay: "0.2s" }}>
                 <ServiceCard
                   title="Scan-to-BIM Production"
                   description="Point cloud to BIM modeling delivered with precision and fast turnaround."
                   cta="Build Scan-to-BIM Capacity"
+                  image="/img2.avif"
                 />
               </div>
-              <div className="animate-fade-in-up" style={{ animationDelay: "0.3s" }}>
+              <div className="animate-fade-in-up h-full" style={{ animationDelay: "0.3s" }}>
                 <ServiceCard
                   title="MEPF Production"
                   description="MEPF modeling, clash detection, coordination and shop drawings."
                   cta="Optimize MEPF Output"
+                  image="/img3.avif"
                 />
               </div>
             </div>
@@ -296,7 +299,7 @@ export default function HomePage() {
         </section>
 
         {/* SECTION 7 — AWARDS - Enhanced Attractive Design */}
-        <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white to-slate-50">
+        {/* <section className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white to-slate-50">
           <div className="max-w-[1600px] mx-auto">
             <div className="text-center mb-10">
               <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-gray-800 mb-3">Our Awards</h2>
@@ -328,7 +331,7 @@ export default function HomePage() {
               })}
             </div>
           </div>
-        </section>
+        </section> */}
 
         {/* SECTION 8 — PROCESS - BairesDev Style Horizontal 3-Step */}
         <section
@@ -468,20 +471,33 @@ type ServiceCardProps = {
   title: string;
   description: string;
   cta: string;
+  image?: string;
 };
 
-function ServiceCard({ title, description, cta }: ServiceCardProps) {
+function ServiceCard({ title, description, cta, image }: ServiceCardProps) {
   return (
     <a
       href="#final-cta"
-      className="group flex flex-col rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm outline-none transition-all duration-300 hover:shadow-lg hover:border-vbs-red/30 hover:-translate-y-1 focus-visible:border-vbs-red focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2"
+      className="group relative flex flex-col h-full rounded-xl border border-slate-200 bg-white p-5 sm:p-6 shadow-sm outline-none transition-all duration-300 hover:shadow-lg hover:border-vbs-red/30 hover:-translate-y-1 focus-visible:border-vbs-red focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 overflow-hidden"
       aria-label={cta}
     >
-      <div className="space-y-3 flex-1">
-        <h3 className="text-lg sm:text-xl font-bold text-gray-800">{title}</h3>
-        <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{description}</p>
+      {image && (
+        <div className="absolute inset-0 z-0">
+          <Image
+            src={image}
+            alt={title}
+            fill
+            className="object-cover"
+            sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+          />
+          <div className="absolute inset-0 bg-gradient-to-b from-white/60 via-white/50 to-white/70"></div>
+        </div>
+      )}
+      <div className="space-y-3 flex-1 relative z-10">
+        <h3 className="text-lg sm:text-xl font-semibold text-gray-800 drop-shadow-sm">{title}</h3>
+        <p className="text-sm sm:text-base font-medium text-gray-700 leading-relaxed drop-shadow-sm">{description}</p>
       </div>
-      <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-vbs-red">
+      <div className="mt-6 pt-5 border-t border-slate-100 flex items-center justify-between gap-2 text-xs sm:text-sm font-semibold text-vbs-red relative z-10">
         <span className="whitespace-nowrap">{cta}</span>
         <span className="transition-transform duration-300 group-hover:translate-x-1 flex-shrink-0 text-base">→</span>
       </div>
