@@ -175,14 +175,16 @@ export default function HomePage() {
                   sizes="100vw"
                 />
               </div>
+              {/* Black transparent overlay for text readability */}
+              <div className="absolute inset-0 z-[1] bg-black/60" />
               {/* Foreground content */}
               <div className="relative z-10">
                 {/* Section Label */}
                 <div className="flex items-center gap-2 mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center text-white shadow-md">
-                    <HiGlobeAlt className="w-7 h-7 sm:w-8 sm:h-8" />
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-teal-500/20 flex items-center justify-center text-teal-400 shadow-md">
+                    <HiGlobeAlt className="w-6 h-6 sm:w-7 sm:h-7" />
                   </div>
-                  <h3 className="text-sm sm:text-base font-black uppercase tracking-[0.12em] text-white">
+                  <h3 className="text-sm sm:text-base font-black uppercase tracking-[0.12em] text-teal-400">
                     Delivery Confidence
                   </h3>
                 </div>
@@ -194,30 +196,42 @@ export default function HomePage() {
                 </p>
 
                 {/* Feature Cards */}
-                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4 justify-items-center">
                   {/* Card 1 — Global Coverage */}
-                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-10 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300">
-                    <div className="w-24 h-24 rounded-full bg-teal-50 flex items-center justify-center text-teal-500 shadow-sm mb-3">
-                      <HiOfficeBuilding className="w-14 h-12" />
+                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-6 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300 sm:ml-auto">
+                    <div className="w-36 h-36 rounded-full flex items-center justify-center mb-4 relative overflow-hidden">
+                      <Image
+                        src="/global.png"
+                        alt="Global Coverage"
+                        width={180}
+                        height={160}
+                        className="object-contain"
+                      />
                     </div>
-                    <dt className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-900 mb-1.5">
+                    <dt className="text-[16px] sm:text-sm font-bold uppercase tracking-wider text-slate-900 mb-1.5">
                       Global Coverage
                     </dt>
-                    <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                    <dd className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-medium">
                       Multiple time zones extend your studio hours.
                     </dd>
                   </div>
 
                   {/* Card 2 — Tool Alignment */}
-                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-10 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300">
-                    <div className="w-24 h-24 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 shadow-sm mb-3">
-                      <FaCog className="w-14 h-8" />
+                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-6 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300 sm:mr-auto">
+                    <div className="w-36 h-36 rounded-full flex items-center justify-center mb-4 relative overflow-hidden">
+                      <Image
+                        src="/tool.jpg"
+                        alt="Tool Alignment"
+                        width={140}
+                        height={120}
+                        className="object-contain"
+                      />
                     </div>
-                    <dt className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-900 mb-1.5">
+                    <dt className="text-[16px] sm:text-sm font-bold uppercase tracking-wider text-slate-900 mb-1.5">
                       Tool Alignment
                     </dt>
-                    <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">
-                      Revit, Navisworks, AutoCAD and more — aligned to your stack.
+                    <dd className="text-[11px] sm:text-xs text-slate-600 leading-relaxed font-medium">
+                      Revit, Navisworks, AutoCAD and more- aligned to your stack.
                     </dd>
                   </div>
                 </dl>
