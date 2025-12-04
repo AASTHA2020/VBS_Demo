@@ -5,7 +5,7 @@ import { Footer } from "@/components/Footer";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import Image from "next/image";
 import { HiChartBar, HiOfficeBuilding, HiStar, HiLightBulb } from "react-icons/hi";
-import { FaTrophy, FaBullseye } from "react-icons/fa";
+import { FaTrophy, FaBullseye, FaPhone, FaHardHat, FaUsers, FaCog } from "react-icons/fa";
 
 
 export default function HomePage() {
@@ -333,10 +333,10 @@ export default function HomePage() {
         {/* SECTION 8 — PROCESS - BairesDev Style Horizontal 3-Step */}
         <section
           id="resources"
-          className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-slate-50"
+          className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-white"
           aria-labelledby="process-title"
         >
-          <div className="max-w-[1600px] mx-auto space-y-8">
+          <div className="max-w-[1600px] mx-auto space-y-12">
             <div className="text-center max-w-3xl mx-auto space-y-3">
               <h2
                 id="process-title"
@@ -345,32 +345,83 @@ export default function HomePage() {
                 Our process. Simple, seamless, streamlined.
               </h2>
             </div>
-            <div className="grid gap-6 lg:grid-cols-3">
+            <div className="grid gap-8 lg:grid-cols-3">
               {[
                 {
-                  step: "step 1",
-                  title: "Join exploration call.",
-                  body: "Tell us more about your business on a discovery call. We'll discuss team structure and approach, success criteria, timescale, budget, and required skill sets to see how we can help."
+                  step: "STEP 1",
+                  icon: FaPhone,
+                  title: "Tell us what you need",
+                  body: "Share details about your business during a discovery call. We'll talk about your project needs, goals, timeline, budget, and necessary skills to see how we can assist you."
                 },
                 {
-                  step: "step 2",
-                  title: "Discuss solution and team structure.",
-                  body: "In a matter of days, we will finalize your project specifications, agree on an engagement model, select and onboard your team."
+                  step: "STEP 2",
+                  icon: FaHardHat,
+                  iconSecondary: FaCog,
+                  title: "We build your production team",
+                  body: "Within 3 days, we'll carefully provide remote Architects or Engineers from our global talent pool tailored to your specific requirements and skills."
                 },
                 {
-                  step: "step 3",
-                  title: "Get started and track performance.",
-                  body: "Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs."
+                  step: "STEP 3",
+                  icon: FaHardHat,
+                  iconSecondary: FaUsers,
+                  title: "Your project moves forward faster",
+                  body: "Our team integrates with yours seamlessly, ready to get to work right away. Onboard new members, oversee performance, and adjust your headcount as required."
                 }
-              ].map((item, index) => (
-                <div key={index} className="bg-white rounded-xl p-5 sm:p-6 border border-slate-200 shadow-sm hover:shadow-md transition-all duration-300 hover:-translate-y-1 animate-fade-in-up" style={{ animationDelay: `${index * 0.15}s` }}>
-                  <p className="text-xs font-semibold uppercase tracking-wider text-vbs-green mb-3">
-                    {item.step}
-                  </p>
-                  <h3 className="text-lg sm:text-xl font-bold text-gray-800 mb-3">{item.title}</h3>
-                  <p className="text-sm sm:text-base text-slate-600 leading-relaxed">{item.body}</p>
-                </div>
-              ))}
+              ].map((item, index) => {
+                const IconComponent = item.icon;
+                const IconSecondary = item.iconSecondary;
+                
+                // Custom styling based on step
+                let iconColor = "text-vbs-red";
+                let iconSecondaryColor = "text-vbs-red";
+                let iconSize = "w-8 h-8 sm:w-10 sm:h-10";
+                
+                if (index === 0) {
+                  // Step 1: Red phone outline
+                  iconColor = "text-vbs-red";
+                } else if (index === 1) {
+                  // Step 2: Dark gray hard hat with red gear
+                  iconColor = "text-gray-700";
+                  iconSecondaryColor = "text-vbs-red";
+                } else if (index === 2) {
+                  // Step 3: Red hard hat with dark gray team
+                  iconColor = "text-vbs-red";
+                  iconSecondaryColor = "text-gray-700";
+                }
+                
+                return (
+                  <div key={index} className="flex flex-col items-center text-center space-y-4 p-6 border border-gray-200 bg-white animate-fade-in-up relative" style={{ animationDelay: `${index * 0.15}s`, borderRadius: '20px 20px 8px 8px' }}>
+                    {/* Icon Container */}
+                    <div className="relative flex items-center justify-center">
+                      <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full bg-gray-100 flex items-center justify-center relative">
+                        {IconSecondary ? (
+                          <div className="relative w-full h-full flex items-center justify-center">
+                            <IconComponent className={`${iconSize} ${iconColor}`} />
+                            <IconSecondary className={`absolute ${index === 1 ? 'w-5 h-5 sm:w-6 sm:h-6' : 'w-4 h-4 sm:w-5 sm:h-5'} ${iconSecondaryColor} ${index === 1 ? 'bottom-1 right-1' : 'bottom-2 right-2'}`} />
+                          </div>
+                        ) : (
+                          <IconComponent className={`${iconSize} ${iconColor}`} />
+                        )}
+                      </div>
+                    </div>
+                    
+                    {/* Step Number */}
+                    <p className="text-sm font-semibold uppercase tracking-wider text-vbs-red">
+                      {item.step}
+                    </p>
+                    
+                    {/* Title */}
+                    <h3 className="text-lg sm:text-xl font-bold text-gray-800">
+                      {item.title}
+                    </h3>
+                    
+                    {/* Description */}
+                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-sm">
+                      {item.body}
+                    </p>
+                  </div>
+                );
+              })}
             </div>
           </div>
         </section>
