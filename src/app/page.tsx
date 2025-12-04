@@ -160,22 +160,22 @@ export default function HomePage() {
                 description="Drafting, modeling and coordination delivered on demand for specific projects."
               />
             </div>
-            <div className="bg-slate-50 rounded-xl p-5 sm:p-6 border border-slate-200">
-              <p className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-3">
+            <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
+              <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">
                 Delivery confidence
-              </p>
-              <p className="text-sm sm:text-base text-blue leading-relaxed mb-5">
+              </dt>
+              <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
                 From early concept drafting to detailed MEPF coordination, VBS teams are structured to plug into your
                 standards, tools and QA processes — so remote never feels distant.
-              </p>
-              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-5 text-sm">
+              </dd>
+              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-3">Global coverage</dt>
-                  <dd className="text-slate-600">Multiple time zones to extend your studio hours.</dd>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">Global coverage</dt>
+                  <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">Multiple time zones to extend your studio hours.</dd>
                 </div>
                 <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-3">Tool alignment</dt>
-                  <dd className="text-slate-600">Revit, Navisworks, AutoCAD and more — aligned to your stack.</dd>
+                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">Tool alignment</dt>
+                  <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">Revit, Navisworks, AutoCAD and more — aligned to your stack.</dd>
                 </div>
               </dl>
             </div>
