@@ -4,7 +4,7 @@ import { Header } from "@/components/Header";
 import { Footer } from "@/components/Footer";
 import { VideoPlayer } from "@/components/VideoPlayer";
 import Image from "next/image";
-import { HiChartBar, HiOfficeBuilding, HiStar, HiLightBulb } from "react-icons/hi";
+import { HiChartBar, HiOfficeBuilding, HiStar, HiLightBulb, HiGlobeAlt } from "react-icons/hi";
 import { FaTrophy, FaBullseye, FaPhone, FaHardHat, FaUsers, FaCog } from "react-icons/fa";
 
 
@@ -153,7 +153,7 @@ export default function HomePage() {
                 Two models. One goal: strengthen your production output without slowing you down.
               </p>
             </div>
-            <div className="grid gap-6 lg:grid-cols-2 mb-8">
+            <div className="grid gap-4 lg:grid-cols-2 mb-8">
               <ModelCard
                 title="Dedicated Remote Production"
                 description="Long-term remote architects and engineers embedded into your workflow."
@@ -163,25 +163,67 @@ export default function HomePage() {
                 description="Drafting, modeling and coordination delivered on demand for specific projects."
               />
             </div>
-            <div className="bg-slate-50 rounded-xl p-4 sm:p-5 border border-slate-200">
-              <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">
-                Delivery confidence
-              </dt>
-              <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed mb-6">
-                From early concept drafting to detailed MEPF coordination, VBS teams are structured to plug into your
-                standards, tools and QA processes — so remote never feels distant.
-              </dd>
-              <dl className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">Global coverage</dt>
-                  <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">Multiple time zones to extend your studio hours.</dd>
+            <div className="relative mt-10 rounded-2xl text-white p-6 sm:p-8 lg:p-10 shadow-xl overflow-hidden">
+              {/* Tech Background Image */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src="/new.jpeg"
+                  alt="Global coverage and tool alignment background"
+                  fill
+                  priority
+                  className="object-cover"
+                  sizes="100vw"
+                />
+              </div>
+              {/* Foreground content */}
+              <div className="relative z-10">
+                {/* Section Label */}
+                <div className="flex items-center gap-2 mb-6">
+                  <div className="w-10 h-10 sm:w-12 sm:h-12 rounded-full bg-white/20 flex items-center justify-center text-white shadow-md">
+                    <HiGlobeAlt className="w-7 h-7 sm:w-8 sm:h-8" />
+                  </div>
+                  <h3 className="text-sm sm:text-base font-black uppercase tracking-[0.12em] text-white">
+                    Delivery Confidence
+                  </h3>
                 </div>
-                <div>
-                  <dt className="text-xs font-semibold uppercase tracking-wider text-vbs-blue mb-2.5">Tool alignment</dt>
-                  <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">Revit, Navisworks, AutoCAD and more — aligned to your stack.</dd>
-                </div>
-              </dl>
+
+                {/* Intro Text */}
+                <p className="text-sm sm:text-base font-semibold text-white leading-relaxed max-w-3xl mb-10">
+                  From early concept drafting to detailed MEPF coordination, VBS teams plug
+                  into your standards, tools and QA processes — so remote never feels distant.
+                </p>
+
+                {/* Feature Cards */}
+                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 justify-items-center">
+                  {/* Card 1 — Global Coverage */}
+                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-10 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div className="w-24 h-24 rounded-full bg-teal-50 flex items-center justify-center text-teal-500 shadow-sm mb-3">
+                      <HiOfficeBuilding className="w-14 h-12" />
+                    </div>
+                    <dt className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-900 mb-1.5">
+                      Global Coverage
+                    </dt>
+                    <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      Multiple time zones extend your studio hours.
+                    </dd>
+                  </div>
+
+                  {/* Card 2 — Tool Alignment */}
+                  <div className="bg-white rounded-2xl shadow-lg flex flex-col items-center text-center px-10 py-4 w-full max-w-sm transition hover:shadow-2xl hover:-translate-y-1 duration-300">
+                    <div className="w-24 h-24 rounded-full bg-orange-50 flex items-center justify-center text-orange-500 shadow-sm mb-3">
+                      <FaCog className="w-14 h-8" />
+                    </div>
+                    <dt className="text-xs sm:text-sm font-semibold uppercase tracking-wider text-slate-900 mb-1.5">
+                      Tool Alignment
+                    </dt>
+                    <dd className="text-xs sm:text-sm text-slate-600 leading-relaxed">
+                      Revit, Navisworks, AutoCAD and more — aligned to your stack.
+                    </dd>
+                  </div>
+                </dl>
+              </div>
             </div>
+
           </div>
         </section>
 
