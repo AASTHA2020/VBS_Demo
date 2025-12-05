@@ -59,13 +59,13 @@ export default function HomePage() {
                 <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 items-center justify-center">
                   <a
                     href="#final-cta"
-                    className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-all hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform duration-200"
+                    className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-all duration-500 ease-in-out hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform"
                   >
                     Build Your Remote Production Team
                   </a>
                   <a
                     href="#what-we-do"
-                    className="inline-flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-all hover:bg-white/20 hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                    className="inline-flex items-center justify-center rounded-lg bg-white/10 backdrop-blur-sm border-2 border-white/30 px-6 sm:px-8 py-3 sm:py-3.5 text-sm sm:text-base font-semibold text-white whitespace-nowrap transition-all duration-500 ease-in-out hover:bg-white/20 hover:border-white/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform"
                   >
                     View Work Samples
                   </a>
@@ -130,7 +130,7 @@ export default function HomePage() {
                   description="Point cloud to BIM modeling delivered with precision and fast turnaround. Transform reality capture into production-ready models."
                   cta="Build Scan-to-BIM Capacity"
                   image="/img2.avif"
-                  isMostRequested={true}
+                  isMostRequested={false}
                 />
               </div>
               <div className="animate-fade-in-up h-full" style={{ animationDelay: "0.3s" }}>
@@ -165,22 +165,22 @@ export default function HomePage() {
         {/* SECTION 5 — HOW WE DELIVER - BairesDev Style */}
         <section
           id="about-us"
-          className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-white"
+          className="px-4 sm:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 bg-white"
           aria-labelledby="how-we-work-title"
         >
           <div className="max-w-[1600px] mx-auto">
-            <div className="text-center max-w-3xl mx-auto mb-8 space-y-3">
+            <div className="text-center max-w-3xl mx-auto mb-6 sm:mb-8 space-y-2 sm:space-y-3">
               <h2
                 id="how-we-work-title"
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800"
               >
                 How We Work
               </h2>
-              <p className="text-base sm:text-lg text-slate-600">
+              <p className="text-sm sm:text-base md:text-lg text-slate-600">
                 Two models. One goal: strengthen your production output without slowing you down.
               </p>
             </div>
-            <div className="grid gap-6 lg:gap-8 lg:grid-cols-2 mb-8">
+            <div className="grid gap-4 sm:gap-6 lg:gap-8 lg:grid-cols-2 mb-8">
               <ModelCard
                 title="Dedicated Remote Production"
                 description="Long-term remote architects and engineers embedded into your workflow. Ideal for firms scaling production capacity with consistent, integrated teams."
@@ -196,81 +196,7 @@ export default function HomePage() {
                 icon={FaHardHat}
               />
             </div>
-            <div className="relative mt-8 sm:mt-10 rounded-2xl text-white p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl overflow-hidden">
-              {/* Tech Background Image */}
-              <div className="absolute inset-0 z-0">
-                <Image
-                  src="/new.jpeg"
-                  alt="Global coverage and tool alignment background"
-                  fill
-                  priority
-                  className="object-cover"
-                  sizes="100vw"
-                />
-              </div>
-              {/* Semi-transparent overlay for text readability - lighter than before */}
-              <div className="absolute inset-0 z-[1] bg-black/50" />
-              
-              {/* Foreground content */}
-              <div className="relative z-10">
-                {/* Section Label */}
-                <div className="flex items-center gap-2 sm:gap-3 mb-4 sm:mb-6">
-                  <div className="w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 rounded-xl bg-gradient-to-br from-vbs-blue to-vbs-green flex items-center justify-center text-white shadow-lg">
-                    <HiGlobeAlt className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8" />
-                  </div>
-                  <h3 className="text-sm sm:text-base md:text-lg font-black uppercase tracking-[0.12em] text-white">
-                    Delivery Confidence
-                  </h3>
-                </div>
-
-                {/* Intro Text */}
-                <p className="text-sm sm:text-base md:text-lg font-semibold text-white leading-relaxed max-w-3xl mb-8 sm:mb-10 md:mb-12">
-                  From early concept drafting to detailed MEPF coordination, VBS teams plug
-                  into your standards, tools and QA processes — so remote never feels distant.
-                </p>
-
-                {/* Feature Cards with more whitespace */}
-                <dl className="grid grid-cols-1 sm:grid-cols-2 gap-6 sm:gap-8 md:gap-10 justify-items-center">
-                  {/* Card 1 — Global Coverage */}
-                  <div className="bg-white rounded-2xl shadow-xl flex flex-col items-center text-center px-4 py-6 sm:px-8 sm:py-8 w-full max-w-sm transition-all hover:shadow-2xl hover:-translate-y-2 hover:scale-105 duration-300 border border-slate-100">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl bg-gradient-to-br from-vbs-blue/10 to-vbs-green/10 flex items-center justify-center mb-4 sm:mb-6 p-3 sm:p-4">
-                      <Image
-                        src="/global.png"
-                        alt="Global Coverage"
-                        width={160}
-                        height={140}
-                        className="object-contain"
-                      />
-                    </div>
-                    <dt className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
-                      Global Coverage
-                    </dt>
-                    <dd className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
-                      Multiple time zones extend your studio hours.
-                    </dd>
-                  </div>
-
-                  {/* Card 2 — Tool Alignment */}
-                  <div className="bg-white rounded-2xl shadow-xl flex flex-col items-center text-center px-4 py-6 sm:px-8 sm:py-8 w-full max-w-sm transition-all hover:shadow-2xl hover:-translate-y-2 hover:scale-105 duration-300 border border-slate-100">
-                    <div className="w-24 h-24 sm:w-32 sm:h-32 md:w-40 md:h-40 rounded-2xl bg-gradient-to-br from-vbs-green/10 to-vbs-yellow/10 flex items-center justify-center mb-4 sm:mb-6 p-3 sm:p-4">
-                      <Image
-                        src="/tool.jpg"
-                        alt="Tool Alignment"
-                        width={140}
-                        height={120}
-                        className="object-contain"
-                      />
-                    </div>
-                    <dt className="text-lg sm:text-xl font-bold text-gray-900 mb-3">
-                      Tool Alignment
-                    </dt>
-                    <dd className="text-sm sm:text-base text-slate-600 leading-relaxed font-medium">
-                      Revit, Navisworks, AutoCAD and more — aligned to your stack.
-                    </dd>
-                  </div>
-                </dl>
-              </div>
-            </div>
+          
 
           </div>
         </section>
@@ -278,21 +204,21 @@ export default function HomePage() {
         {/* SECTION 6 — PROOF - Client Logos & Testimonials */}
         <section
           id="success-stories"
-          className="px-4 sm:px-6 lg:px-8 py-16 sm:py-20 lg:py-24 bg-slate-50"
+          className="px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20 lg:py-24 bg-slate-50"
           aria-labelledby="proof-title"
         >
-          <div className="max-w-[1600px] mx-auto space-y-16">
-            <div className="text-center max-w-3xl mx-auto space-y-4">
+          <div className="max-w-[1600px] mx-auto space-y-10 sm:space-y-12 md:space-y-14 lg:space-y-16">
+            <div className="text-center max-w-3xl mx-auto space-y-3 sm:space-y-4">
               <h2
                 id="proof-title"
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800 mb-8"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800 mb-6 sm:mb-8"
               >
                 Trusted by 250+ AEC firms and powered by a team of 400+ remote specialists.
               </h2>
             </div>
 
             {/* Client Testimonial Images - Infinite Horizontal Scroll with Consistent Grading */}
-            <div className="scroll-container mb-12 sm:mb-16 lg:mb-20" aria-label="250+ AEC firms trust VBS">
+            <div className="scroll-container mb-8 sm:mb-12 md:mb-16 lg:mb-20" aria-label="250+ AEC firms trust VBS">
               <div className="scroll-content">
                 {[
                   { id: 1, filename: "firm1.avif" },
@@ -305,16 +231,16 @@ export default function HomePage() {
                   { id: 8, filename: "firm1.avif" }
                 ].map((client) => (
                   <div key={client.id} className="scroll-item">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden bg-white border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden bg-white border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-500 ease-in-out hover:scale-110 group">
                       <Image
                         src={`/${client.filename}`}
                         alt={`AEC firm client ${client.id}`}
                         fill
-                        className="object-cover brightness-100 contrast-110 saturate-110 group-hover:brightness-110 transition-all duration-300"
+                        className="object-cover brightness-100 contrast-110 saturate-110 group-hover:brightness-110 transition-all duration-500 ease-in-out"
                         sizes="160px"
                       />
                       {/* Consistent overlay for unified look */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
                     </div>
                   </div>
                 ))}
@@ -330,74 +256,44 @@ export default function HomePage() {
                   { id: 8, filename: "firm1.avif" }
                 ].map((client) => (
                   <div key={`duplicate-${client.id}`} className="scroll-item">
-                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden bg-white border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:scale-110 group">
+                    <div className="relative w-32 h-32 sm:w-40 sm:h-40 rounded-xl overflow-hidden bg-white border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-500 ease-in-out hover:scale-110 group">
                       <Image
                         src={`/${client.filename}`}
                         alt={`AEC firm client ${client.id}`}
                         fill
-                        className="object-cover brightness-100 contrast-110 saturate-110 group-hover:brightness-110 transition-all duration-300"
+                        className="object-cover brightness-100 contrast-110 saturate-110 group-hover:brightness-110 transition-all duration-500 ease-in-out"
                         sizes="160px"
                       />
                       {/* Consistent overlay for unified look */}
-                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+                      <div className="absolute inset-0 bg-gradient-to-br from-white/0 via-transparent to-slate-900/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
                     </div>
                   </div>
                 ))}
               </div>
             </div>
 
-            {/* Video & Testimonial - Side by Side */}
-            <div className="grid gap-8 lg:grid-cols-2 lg:items-stretch">
-              <div className="relative overflow-hidden rounded-2xl bg-gradient-to-br from-vbs-blue/20 to-vbs-green/20 shadow-xl border-2 border-slate-200">
-                <div className="relative h-[250px] sm:h-[350px] lg:h-[450px]">
-                  <Image
-                    src="https://images.unsplash.com/photo-1582407947304-fd86f028f716?w=1200&h=800&fit=crop&q=80"
-                    alt="Architecture and engineering project"
-                    fill
-                    className="object-cover brightness-110 contrast-105"
-                    sizes="(max-width: 1024px) 100vw, 50vw"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-black/20 to-transparent" />
-                  <VideoPlayer />
-                </div>
-              </div>
-
-              <div className="space-y-4 flex flex-col h-full" aria-label="Client testimonial">
-                <p className="text-base sm:text-lg font-bold uppercase tracking-wider text-vbs-red">
-                  Partner voices
-                </p>
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex-1">
-                  <div className="mb-2">
-                    <svg className="w-6 h-6 text-vbs-red opacity-60 mb-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                    </svg>
-                  </div>
-                  <p className="text-xs sm:text-sm leading-relaxed text-slate-800 mb-3">
-                    <span className="font-bold text-gray-900">"VBS behaves like an extension of our in-house team."</span> They understand our standards, deliver on tight
-                    deadlines and keep coordination clean across disciplines.
-                  </p>
-                  <div className="pt-3 border-t-2 border-slate-100">
-                    <p className="font-bold text-xs sm:text-sm text-gray-900">Head of Production</p>
-                    <p className="text-xs text-slate-600 mt-0.5">Global architecture and engineering firm</p>
+            {/* Video & Testimonial - 3 YouTube Videos in Horizontal Layout */}
+            <div className="grid gap-3 sm:gap-4 md:gap-6 lg:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
+              {[
+                { id: "uyaBPQrNhW0", title: "Client Testimonial 1" },
+                { id: "nHNRCMkaGAk", title: "Client Testimonial 2" },
+                { id: "2NsLtpdtMto", title: "Client Testimonial 3" }
+              ].map((video) => (
+                <div
+                  key={video.id}
+                  className="group relative overflow-hidden rounded-xl sm:rounded-2xl shadow-lg sm:shadow-xl border-2 border-slate-200 hover:border-vbs-red transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-1 sm:hover:-translate-y-2"
+                >
+                  <div className="relative aspect-video w-full">
+                    <iframe
+                      src={`https://www.youtube.com/embed/${video.id}`}
+                      title={video.title}
+                      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                      allowFullScreen
+                      className="absolute inset-0 w-full h-full rounded-xl sm:rounded-2xl"
+                    />
                   </div>
                 </div>
-                
-                {/* Second Testimonial */}
-                <div className="bg-white rounded-2xl p-4 sm:p-5 border-2 border-slate-200 shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-1 flex-1">
-                  <div className="mb-2">
-                    <svg className="w-6 h-6 text-vbs-red opacity-60 mb-1" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M14.017 21v-7.391c0-5.704 3.731-9.57 8.983-10.609l.996 2.151c-2.432.917-3.995 3.638-3.995 5.849h4v10h-9.983zm-14.017 0v-7.391c0-5.704 3.748-9.57 9-10.609l.996 2.151c-2.433.917-3.996 3.638-3.996 5.849h3.983v10h-9.983z"/>
-                    </svg>
-                  </div>
-                  <p className="text-xs sm:text-sm leading-relaxed text-slate-800 mb-3">
-                    <span className="font-bold text-gray-900">"Working with VBS has transformed our production capacity."</span> Their remote architects seamlessly integrate with our workflow, maintaining our quality standards while significantly accelerating project delivery.
-                  </p>
-                  <div className="pt-3 border-t-2 border-slate-100">
-                    <p className="font-bold text-xs sm:text-sm text-gray-900">Director of Architecture</p>
-                    <p className="text-xs text-slate-600 mt-0.5">Leading AEC consulting firm</p>
-                  </div>
-                </div>
-              </div>
+              ))}
             </div>
           </div>
         </section>
@@ -437,95 +333,73 @@ export default function HomePage() {
           </div>
         </section> */}
 
-        {/* SECTION 8 — PROCESS - BairesDev Style Horizontal 3-Step */}
+        {/* SECTION 8 — PROCESS - Vertical Layout with Circular Icons */}
         <section
           id="resources"
-          className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-white"
+          className="px-3 sm:px-4 md:px-6 lg:px-8 py-6 sm:py-8 md:py-10 lg:py-12 bg-white"
           aria-labelledby="process-title"
         >
-          <div className="max-w-[1600px] mx-auto space-y-12">
-            <div className="text-center max-w-3xl mx-auto space-y-3">
+          <div className="max-w-[1600px] mx-auto space-y-4 sm:space-y-6 md:space-y-8 lg:space-y-12">
+            <div className="text-center max-w-3xl mx-auto space-y-2 sm:space-y-3">
               <h2
                 id="process-title"
-                className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800"
+                className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold tracking-tight text-gray-800 px-2"
               >
                 Our process. Simple, seamless, streamlined.
               </h2>
             </div>
-            <div className="grid gap-8 lg:grid-cols-3">
-              {[
-                {
-                  step: "STEP 1",
-                  icon: FaPhone,
-                  title: "Tell us what you need",
-                  body: "Share details about your business during a discovery call. We'll talk about your project needs, goals, timeline, budget, and necessary skills to see how we can assist you."
-                },
-                {
-                  step: "STEP 2",
-                  icon: FaHardHat,
-                  iconSecondary: FaCog,
-                  title: "We build your production team",
-                  body: "Within 3 days, we'll carefully provide remote Architects or Engineers from our global talent pool tailored to your specific requirements and skills."
-                },
-                {
-                  step: "STEP 3",
-                  icon: FaHardHat,
-                  iconSecondary: FaUsers,
-                  title: "Your project moves forward faster",
-                  body: "Our team integrates with yours seamlessly, ready to get to work right away. Onboard new members, oversee performance, and adjust your headcount as required."
-                }
-              ].map((item, index) => {
-                const IconComponent = item.icon;
-                const IconSecondary = item.iconSecondary;
-                
-                // Progressive sizing: Step 1 (smaller) → Step 3 (larger) - Responsive
-                const sizeMultiplier = index === 0 ? 1 : index === 1 ? 1.1 : 1.2;
-                const iconContainerSize = index === 0 ? 'w-16 h-16 sm:w-20 sm:h-20 lg:w-24 lg:h-24' : index === 1 ? 'w-20 h-20 sm:w-[88px] sm:h-[88px] lg:w-24 lg:h-24' : 'w-20 h-20 sm:w-24 sm:h-24 lg:w-28 lg:h-28';
-                const iconSize = index === 0 ? 'w-8 h-8 sm:w-10 sm:h-10 lg:w-12 lg:h-12' : index === 1 ? 'w-9 h-9 sm:w-11 sm:h-11 lg:w-12 lg:h-12' : 'w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14';
-                const iconSecondarySize = index === 1 ? 'w-5 h-5 sm:w-6 sm:h-6 lg:w-7 lg:h-7' : 'w-6 h-6 sm:w-7 sm:h-7 lg:w-8 lg:h-8';
-                const cardPadding = index === 0 ? 'p-4 sm:p-6 lg:p-6' : index === 1 ? 'p-5 sm:p-7 lg:p-7' : 'p-5 sm:p-8 lg:p-8';
-                const titleSize = index === 0 ? 'text-base sm:text-lg lg:text-xl' : index === 1 ? 'text-lg sm:text-xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl';
-                
-                // Brand-specific gradient colors - All steps with gradient
-                const iconBgGradient = index === 0 
-                  ? 'from-vbs-red/20 to-vbs-yellow/20' 
-                  : index === 1 
-                  ? 'from-vbs-blue/20 to-vbs-green/20' 
-                  : 'from-vbs-green/20 to-vbs-yellow/20';
-                
-                return (
-                  <div key={index} className={`flex flex-col items-center text-center space-y-4 ${cardPadding} border-2 border-gray-200 bg-white rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 hover:-translate-y-2 animate-fade-in-up relative`} style={{ animationDelay: `${index * 0.15}s` }}>
-                    {/* Icon Container with Brand Gradient */}
-                    <div className="relative flex items-center justify-center">
-                      <div className={`rounded-2xl bg-gradient-to-br ${iconBgGradient} flex items-center justify-center relative shadow-lg ${iconContainerSize}`}>
-                        {IconSecondary ? (
-                          <div className="relative w-full h-full flex items-center justify-center">
-                            <IconComponent className={`text-vbs-red ${iconSize}`} />
-                            <IconSecondary className={`absolute text-vbs-blue ${index === 1 ? 'bottom-1 right-1 sm:bottom-2 sm:right-2' : 'bottom-2 right-2 sm:bottom-3 sm:right-3'} ${iconSecondarySize}`} />
-                          </div>
-                        ) : (
-                          <IconComponent className={`text-vbs-red ${iconSize}`} />
-                        )}
+            <div className="relative max-w-4xl mx-auto px-2 sm:px-4">
+              {/* Vertical Dotted Line Connector */}
+              <div className="absolute left-4 sm:left-5 md:left-6 lg:left-8 top-0 bottom-0 w-0.5 border-l-2 border-dashed border-gray-300"></div>
+              
+              <div className="space-y-4 sm:space-y-4 md:space-y-5 lg:space-y-6">
+                {[
+                  {
+                    step: "STEP 1",
+                    icon: FaPhone,
+                    title: "Join exploration call.",
+                    body: "Tell us more about your business on a discovery call. We'll discuss team structure and approach, success criteria, timescale, budget, and required skill sets to see how we can help."
+                  },
+                  {
+                    step: "STEP 2",
+                    icon: FaUsers,
+                    title: "We build your production team",
+                    body: "In a matter of days, we will finalize your project specifications, agree on an engagement model, select and onboard your team."
+                  },
+                  {
+                    step: "STEP 3",
+                    icon: FaHardHat,
+                    title: "Your project moves forward faster",
+                    body: "Once we've agreed on milestones, we'll immediately get to work. We'll track progress, report updates, and continuously adapt to your needs."
+                  }
+                ].map((item, index) => {
+                  const IconComponent = item.icon;
+                  
+                  return (
+                    <div key={index} className="relative flex items-start gap-3 sm:gap-3 md:gap-4 lg:gap-6">
+                      {/* Circular Icon */}
+                      <div className="relative z-10 flex-shrink-0">
+                        <div className="w-9 h-9 sm:w-10 sm:h-10 md:w-12 md:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 rounded-full bg-vbs-red flex items-center justify-center shadow-lg">
+                          <IconComponent className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 text-white" />
+                        </div>
+                      </div>
+                      
+                      {/* Content */}
+                      <div className="flex-1 pt-0 sm:pt-0.5 md:pt-1 lg:pt-2">
+                        <p className="text-xs sm:text-sm md:text-sm lg:text-sm font-semibold uppercase tracking-wider text-gray-500 mb-1 sm:mb-1 md:mb-1.5">
+                          {item.step}
+                        </p>
+                        <h3 className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl font-bold text-gray-900 mb-1 sm:mb-1.5 md:mb-2 lg:mb-3 leading-tight">
+                          {item.title}
+                        </h3>
+                        <p className="text-[11px] sm:text-xs md:text-sm lg:text-base text-gray-600 leading-snug sm:leading-relaxed">
+                          {item.body}
+                        </p>
                       </div>
                     </div>
-                    
-                    {/* Step Number */}
-                    <p className="text-sm font-bold uppercase tracking-wider text-vbs-red">
-                      {item.step}
-                    </p>
-                    
-                    {/* Title with Progressive Sizing */}
-                    <h3 className={`${titleSize} font-bold text-gray-900 leading-tight`}>
-                      {item.title}
-                    </h3>
-                    
-                    {/* Description */}
-                    <p className="text-sm sm:text-base text-gray-600 leading-relaxed max-w-sm">
-                      {item.body}
-                    </p>
-                  </div>
-                );
-              })}
+                  );
+                })}
+              </div>
             </div>
           </div>
         </section>
@@ -571,14 +445,14 @@ export default function HomePage() {
                   </p>
                   <div className="flex flex-col sm:flex-row gap-2.5 sm:gap-3 md:gap-4">
                     <a
-                      href="mailto:hello@virtualbuildingstudio.com?subject=Build%20my%20remote%20AEC%20production%20team"
-                      className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-3.5 text-[11px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold text-white whitespace-nowrap transition-all hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform duration-200"
-                    >
-                      Build Your Remote Production Team
-                    </a>
-                    <a
-                      href="tel:+10000000000"
-                      className="inline-flex items-center justify-center rounded-lg bg-white border-2 border-slate-300 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 lg:px-6 lg:py-3.5 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold text-gray-900 whitespace-nowrap transition-all hover:border-vbs-red hover:text-vbs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                    href="mailto:hello@virtualbuildingstudio.com?subject=Build%20my%20remote%20AEC%20production%20team"
+                    className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-4 py-2 sm:px-5 sm:py-2.5 md:px-6 md:py-3 lg:px-8 lg:py-3.5 text-[11px] sm:text-xs md:text-sm lg:text-base xl:text-lg font-bold text-white whitespace-nowrap transition-all duration-500 ease-in-out hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform"
+                  >
+                    Build Your Remote Production Team
+                  </a>
+                  <a
+                    href="tel:+10000000000"
+                    className="inline-flex items-center justify-center rounded-lg bg-white border-2 border-slate-300 px-3 py-2 sm:px-4 sm:py-2.5 md:px-5 md:py-3 lg:px-6 lg:py-3.5 text-[11px] sm:text-xs md:text-sm lg:text-base font-semibold text-gray-900 whitespace-nowrap transition-all duration-500 ease-in-out hover:border-vbs-red hover:text-vbs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform"
                     >
                       <svg className="w-3.5 h-3.5 sm:w-4 sm:h-4 md:w-5 md:h-5 mr-1.5 sm:mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
@@ -710,7 +584,7 @@ function ServiceCard({ title, description, cta, image, isMostRequested = false }
         isMostRequested 
           ? 'border-vbs-red/40 bg-gradient-to-br from-white to-vbs-red/5 shadow-xl' 
           : 'border-slate-200 bg-white shadow-md'
-      } p-4 sm:p-6 md:p-7 outline-none transition-all duration-300 hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] focus-visible:border-vbs-red focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 overflow-hidden`}
+      } p-4 sm:p-6 md:p-7 outline-none transition-all duration-500 ease-in-out hover:shadow-2xl hover:-translate-y-2 hover:scale-[1.02] focus-visible:border-vbs-red focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 overflow-hidden`}
       aria-label={cta}
     >
       {isMostRequested && (
@@ -726,19 +600,19 @@ function ServiceCard({ title, description, cta, image, isMostRequested = false }
             src={image}
             alt={title}
             fill
-            className="object-cover transition-transform duration-500 group-hover:scale-110"
+            className="object-cover transition-transform duration-500 ease-in-out group-hover:scale-110"
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
           />
-          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/80 group-hover:from-white/85 group-hover:via-white/75 group-hover:to-white/90 transition-colors duration-300"></div>
+          <div className="absolute inset-0 bg-gradient-to-b from-white/75 via-white/65 to-white/80 group-hover:from-white/85 group-hover:via-white/75 group-hover:to-white/90 transition-colors duration-500 ease-in-out"></div>
         </div>
       )}
       <div className="space-y-3 sm:space-y-4 flex-1 relative z-10">
         <h3 className="text-lg sm:text-xl md:text-2xl font-bold text-gray-900 drop-shadow-sm leading-tight">{title}</h3>
         <p className="text-sm sm:text-base md:text-lg font-medium text-gray-700 leading-relaxed drop-shadow-sm">{description}</p>
       </div>
-      <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t-2 border-slate-200 group-hover:border-vbs-red/30 transition-colors duration-300 flex items-center justify-between gap-2 text-xs sm:text-sm md:text-base font-bold text-vbs-red relative z-10">
+      <div className="mt-4 sm:mt-6 pt-4 sm:pt-6 border-t-2 border-slate-200 group-hover:border-vbs-red/30 transition-colors duration-500 ease-in-out flex items-center justify-between gap-2 text-xs sm:text-sm md:text-base font-bold text-vbs-red relative z-10">
         <span className="whitespace-nowrap">{cta}</span>
-        <span className="transition-transform duration-300 group-hover:translate-x-2 flex-shrink-0 text-xl">→</span>
+        <span className="transition-transform duration-500 ease-in-out group-hover:translate-x-2 flex-shrink-0 text-xl">→</span>
       </div>
     </a>
   );
@@ -754,37 +628,37 @@ type ModelCardProps = {
 
 function ModelCard({ title, description, isRecommended = false, recommendedFor, icon: Icon }: ModelCardProps) {
   return (
-    <div className="group relative flex flex-col gap-3 sm:gap-4 rounded-2xl p-4 sm:p-6 md:p-8 border-2 bg-gradient-to-br from-vbs-blue/5 via-white to-vbs-green/5 border-vbs-blue/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] overflow-hidden">
+    <div className="group relative flex flex-col gap-2.5 sm:gap-3 md:gap-4 rounded-2xl p-3 sm:p-5 md:p-6 lg:p-8 border-2 bg-white border-vbs-red/40 shadow-xl hover:shadow-2xl transition-all duration-500 ease-in-out hover:-translate-y-2 hover:scale-[1.01] overflow-hidden">
       {/* Recommended Badge - Only show for Dedicated Remote Production */}
       {isRecommended && (
         <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10">
-          <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white bg-gradient-to-r from-vbs-blue to-vbs-green shadow-lg">
+          <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white bg-vbs-red shadow-lg">
             Recommended
           </span>
         </div>
       )}
       
-      {/* Strong Icon - Same gradient for both */}
+      {/* Strong Icon - Red gradient theme */}
       {Icon && (
-        <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-vbs-blue to-vbs-green shadow-lg group-hover:scale-110 transition-transform duration-300">
-          <Icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
+        <div className="flex items-center justify-center w-10 h-10 sm:w-14 sm:h-14 md:w-16 md:h-16 lg:w-14 lg:h-14 rounded-2xl bg-gradient-to-br from-vbs-red via-red-600 to-vbs-red shadow-lg group-hover:scale-110 transition-transform duration-500 ease-in-out">
+          <Icon className="w-5 h-5 sm:w-7 sm:h-7 md:w-8 md:h-8 lg:w-7 lg:h-7 text-white" />
         </div>
       )}
       
-      <div className="space-y-3 relative z-10">
-        <h3 className="text-lg sm:text-xl font-bold text-gray-900 leading-tight">
+      <div className="space-y-2 sm:space-y-2.5 md:space-y-3 relative z-10">
+        <h3 className="text-base sm:text-lg md:text-xl font-bold text-gray-900 leading-tight">
           {title}
         </h3>
         {recommendedFor && (
-          <p className="text-xs sm:text-sm font-semibold text-vbs-blue uppercase tracking-wider">
+          <p className="text-[10px] sm:text-xs md:text-sm font-semibold text-vbs-red uppercase tracking-wider">
             {recommendedFor}
           </p>
         )}
-        <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">{description}</p>
+        <p className="text-xs sm:text-sm md:text-base text-slate-700 leading-relaxed font-medium">{description}</p>
       </div>
       
-      {/* Accent line on hover - Same for both */}
-      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-vbs-blue via-vbs-green to-vbs-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
+      {/* Accent line on hover - Red theme */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-vbs-red opacity-0 group-hover:opacity-100 transition-opacity duration-500 ease-in-out"></div>
     </div>
   );
 }
