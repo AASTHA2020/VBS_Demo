@@ -452,15 +452,7 @@ export default function HomePage() {
                 Our process. Simple, seamless, streamlined.
               </h2>
             </div>
-            <div className="relative grid gap-8 lg:grid-cols-3">
-              {/* Flow Arrow - Hidden on mobile, visible on desktop */}
-              <div className="hidden lg:block absolute top-24 left-1/3 right-1/3 h-0.5 bg-gradient-to-r from-vbs-red via-vbs-blue to-vbs-green">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-0 h-0 border-l-[12px] border-l-vbs-green border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
-              </div>
-              <div className="hidden lg:block absolute top-24 left-2/3 right-0 h-0.5 bg-gradient-to-r from-vbs-green via-vbs-yellow to-vbs-red">
-                <div className="absolute right-0 top-1/2 -translate-y-1/2 translate-x-1/2 w-0 h-0 border-l-[12px] border-l-vbs-red border-t-[8px] border-t-transparent border-b-[8px] border-b-transparent"></div>
-              </div>
-              
+            <div className="grid gap-8 lg:grid-cols-3">
               {[
                 {
                   step: "STEP 1",
@@ -494,9 +486,9 @@ export default function HomePage() {
                 const cardPadding = index === 0 ? 'p-4 sm:p-6 lg:p-6' : index === 1 ? 'p-5 sm:p-7 lg:p-7' : 'p-5 sm:p-8 lg:p-8';
                 const titleSize = index === 0 ? 'text-base sm:text-lg lg:text-xl' : index === 1 ? 'text-lg sm:text-xl lg:text-2xl' : 'text-lg sm:text-xl lg:text-2xl';
                 
-                // Brand-specific gradient colors
+                // Brand-specific gradient colors - All steps with gradient
                 const iconBgGradient = index === 0 
-                  ? 'from-vbs-red/20 to-vbs-red/10' 
+                  ? 'from-vbs-red/20 to-vbs-yellow/20' 
                   : index === 1 
                   ? 'from-vbs-blue/20 to-vbs-green/20' 
                   : 'from-vbs-green/20 to-vbs-yellow/20';
@@ -538,61 +530,166 @@ export default function HomePage() {
           </div>
         </section>
 
-        {/* SECTION 9 — FINAL CTA - BairesDev Style Centered */}
+        {/* SECTION 9 — FINAL CTA - Left Content + Right Eye Illustration */}
         <section
           id="final-cta"
           className="px-4 sm:px-6 lg:px-8 py-8 sm:py-10 lg:py-12 bg-gradient-to-b from-white to-slate-50"
           aria-labelledby="final-cta-title"
         >
           <div className="max-w-[1600px] mx-auto">
-            <div className="bg-white mx-auto max-w-4xl rounded-2xl px-6 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 text-center border-2 border-slate-200 shadow-2xl relative overflow-hidden">
-              {/* Decorative background elements */}
-              <div className="absolute top-0 right-0 w-64 h-64 bg-gradient-to-br from-vbs-blue/5 to-transparent rounded-full blur-3xl"></div>
-              <div className="absolute bottom-0 left-0 w-64 h-64 bg-gradient-to-tr from-vbs-green/5 to-transparent rounded-full blur-3xl"></div>
-              
-              <div className="relative z-10">
-                {/* Urgency Badge */}
-                <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-vbs-red/10 rounded-full mb-4">
-                  <span className="w-2 h-2 bg-vbs-red rounded-full animate-pulse"></span>
-                  <span className="text-xs sm:text-sm font-bold text-vbs-red uppercase tracking-wider">Book a 20-min Assessment</span>
-                </div>
-                
-                <h2
-                  id="final-cta-title"
-                  className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-gray-900 mb-4"
-                >
-                  Build Your Remote Production Team
-                </h2>
-                <p className="text-base sm:text-lg text-slate-600 mb-8 max-w-2xl mx-auto">
-                  Share the workflows you want to strengthen and we'll design a dedicated or project-based production
-                  model around them.
-                </p>
-                <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                  <a
-                    href="mailto:hello@virtualbuildingstudio.com?subject=Build%20my%20remote%20AEC%20production%20team"
-                    className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-8 py-3.5 text-base sm:text-lg font-bold text-white whitespace-nowrap transition-all hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform duration-200"
+            <div className="bg-white rounded-2xl px-6 sm:px-8 lg:px-10 py-8 sm:py-10 lg:py-12 border-2 border-slate-200 shadow-2xl relative overflow-hidden">
+              {/* Background Image inside the white div */}
+              <div className="absolute inset-0 z-0">
+                <Image
+                  src="/bg_img2.avif"
+                  alt="AEC production background"
+                  fill
+                  className="object-cover"
+                  sizes="100vw"
+                />
+                {/* Dark overlay for text readability */}
+                <div className="absolute inset-0 bg-black/70"></div>
+              </div>
+              <div className="relative z-10 grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+                {/* Left Side - Content */}
+                <div className="text-left lg:pr-8">
+                  {/* Urgency Badge */}
+                  <div className="inline-flex items-center gap-2 px-4 py-1.5 bg-vbs-red/10 rounded-full mb-4">
+                    <span className="w-2 h-2 bg-vbs-red rounded-full animate-pulse"></span>
+                    <span className="text-xs sm:text-sm font-bold text-vbs-red uppercase tracking-wider">Book a 20-min Assessment</span>
+                  </div>
+                  
+                  <h2
+                    id="final-cta-title"
+                    className="text-2xl sm:text-3xl lg:text-4xl font-bold tracking-tight text-white mb-4"
                   >
                     Build Your Remote Production Team
-                  </a>
-                  <a
-                    href="tel:+10000000000"
-                    className="inline-flex items-center justify-center rounded-lg bg-white border-2 border-slate-300 px-6 py-3.5 text-sm sm:text-base font-semibold text-gray-900 whitespace-nowrap transition-all hover:border-vbs-red hover:text-vbs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
-                  >
-                    <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
-                    </svg>
-                    Call +1 (000) 000-0000
-                  </a>
+                  </h2>
+                  <p className="text-base sm:text-lg text-white/90 mb-8">
+                    Share the workflows you want to strengthen and we'll design a dedicated or project-based production
+                    model around them.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4">
+                    <a
+                      href="mailto:hello@virtualbuildingstudio.com?subject=Build%20my%20remote%20AEC%20production%20team"
+                      className="inline-flex items-center justify-center rounded-lg bg-vbs-red px-8 py-3.5 text-base sm:text-lg font-bold text-white whitespace-nowrap transition-all hover:bg-vbs-redDark focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-xl hover:shadow-2xl hover:scale-105 transform duration-200"
+                    >
+                      Build Your Remote Production Team
+                    </a>
+                    <a
+                      href="tel:+10000000000"
+                      className="inline-flex items-center justify-center rounded-lg bg-white border-2 border-slate-300 px-6 py-3.5 text-sm sm:text-base font-semibold text-gray-900 whitespace-nowrap transition-all hover:border-vbs-red hover:text-vbs-red focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-vbs-red focus-visible:ring-offset-2 shadow-lg hover:shadow-xl hover:scale-105 transform duration-200"
+                    >
+                      <svg className="w-5 h-5 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                      </svg>
+                      Call +1 (000) 000-0000
+                    </a>
+                  </div>
+                  <p className="mt-6 text-xs sm:text-sm text-white/80">
+                    Free consultation • No commitment required
+                  </p>
                 </div>
-                <p className="mt-6 text-xs sm:text-sm text-slate-500">
-                  Free consultation • No commitment required
-                </p>
+                
+                {/* Right Side - Eye Illustration */}
+                <div className="flex items-center justify-center lg:justify-end">
+                  <EyeIllustration />
+                </div>
               </div>
             </div>
           </div>
         </section>
       </main>
       <Footer />
+    </div>
+  );
+}
+
+// Circular Stat Component for Final CTA
+function EyeIllustration() {
+  const uniqueId = `cta-circle-${Math.random().toString(36).substr(2, 9)}`;
+  
+  return (
+    <div className="relative w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96">
+      {/* Circular Rotating Text using SVG - Rotating entire SVG */}
+      <svg 
+        className="absolute inset-0 w-full h-full animate-rotate-svg" 
+        viewBox="0 0 300 300"
+        style={{ animation: 'rotate 20s linear infinite' }}
+      >
+        <defs>
+          <path
+            id={uniqueId}
+            d="M 150, 150 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"
+          />
+        </defs>
+        <text
+          fill="#FFFFFF"
+          fontSize="18"
+          fontWeight="400"
+          letterSpacing="6"
+        >
+          <textPath href={`#${uniqueId}`}>
+            trusted by 250+ aec firms • trusted by 250+ aec firms • 
+          </textPath>
+        </text>
+      </svg>
+      
+      {/* Center Content */}
+      <div className="absolute inset-0 flex flex-col items-center justify-center text-center">
+        <h2 className="text-5xl sm:text-6xl lg:text-7xl font-bold mb-2 text-white">
+          400+
+        </h2>
+        <p className="text-base sm:text-lg font-semibold text-white leading-tight">
+          remote<br />specialists
+        </p>
+      </div>
+    </div>
+  );
+}
+
+// Circular Stat Component
+function CircularStat() {
+  const uniqueId = `circle-path-${Math.random().toString(36).substr(2, 9)}`;
+  
+  return (
+    <div className="relative w-64 h-64 sm:w-80 sm:h-80 flex items-center justify-center">
+      {/* Circular Text - Rotating entire SVG */}
+      <svg 
+        className="absolute inset-0 w-full h-full" 
+        viewBox="0 0 300 300"
+        style={{ animation: 'rotate 20s linear infinite' }}
+      >
+        <defs>
+          <path
+            id={uniqueId}
+            d="M 150, 150 m -120, 0 a 120,120 0 1,1 240,0 a 120,120 0 1,1 -240,0"
+          />
+        </defs>
+        <text
+          fill="#FFFFFF"
+          fontSize="18"
+          fontWeight="400"
+          letterSpacing="6"
+        >
+          <textPath href={`#${uniqueId}`}>
+            trusted by 250+ aec firms • trusted by 250+ aec firms • 
+          </textPath>
+        </text>
+      </svg>
+      
+      {/* Center Content */}
+      <div className="relative z-10 text-center">
+        <div className="text-5xl sm:text-6xl lg:text-7xl font-bold text-white mb-2">
+          400+
+        </div>
+        <div className="text-base sm:text-lg font-semibold text-white">
+          remote
+        </div>
+        <div className="text-base sm:text-lg font-semibold text-white">
+          specialists
+        </div>
+      </div>
     </div>
   );
 }
@@ -657,12 +754,8 @@ type ModelCardProps = {
 
 function ModelCard({ title, description, isRecommended = false, recommendedFor, icon: Icon }: ModelCardProps) {
   return (
-    <div className={`group relative flex flex-col gap-3 sm:gap-4 rounded-2xl p-4 sm:p-6 md:p-8 border-2 ${
-      isRecommended 
-        ? 'bg-gradient-to-br from-vbs-blue/5 via-white to-vbs-green/5 border-vbs-blue/40 shadow-xl' 
-        : 'bg-gradient-to-br from-white to-slate-50/80 border-slate-200/80 shadow-lg'
-    } hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] overflow-hidden`}>
-      {/* Recommended Badge */}
+    <div className="group relative flex flex-col gap-3 sm:gap-4 rounded-2xl p-4 sm:p-6 md:p-8 border-2 bg-gradient-to-br from-vbs-blue/5 via-white to-vbs-green/5 border-vbs-blue/40 shadow-xl hover:shadow-2xl transition-all duration-300 hover:-translate-y-2 hover:scale-[1.01] overflow-hidden">
+      {/* Recommended Badge - Only show for Dedicated Remote Production */}
       {isRecommended && (
         <div className="absolute top-2 right-2 sm:top-4 sm:right-4 z-10">
           <span className="inline-flex items-center px-2 py-0.5 sm:px-3 sm:py-1 rounded-full text-[10px] sm:text-xs font-bold text-white bg-gradient-to-r from-vbs-blue to-vbs-green shadow-lg">
@@ -671,16 +764,10 @@ function ModelCard({ title, description, isRecommended = false, recommendedFor, 
         </div>
       )}
       
-      {/* Strong Icon */}
+      {/* Strong Icon - Same gradient for both */}
       {Icon && (
-        <div className={`flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl ${
-          isRecommended 
-            ? 'bg-gradient-to-br from-vbs-blue to-vbs-green' 
-            : 'bg-gradient-to-br from-slate-200 to-slate-300'
-        } shadow-lg group-hover:scale-110 transition-transform duration-300`}>
-          <Icon className={`w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 ${
-            isRecommended ? 'text-white' : 'text-slate-700'
-          }`} />
+        <div className="flex items-center justify-center w-12 h-12 sm:w-16 sm:h-16 md:w-20 md:h-20 rounded-2xl bg-gradient-to-br from-vbs-blue to-vbs-green shadow-lg group-hover:scale-110 transition-transform duration-300">
+          <Icon className="w-6 h-6 sm:w-8 sm:h-8 md:w-10 md:h-10 text-white" />
         </div>
       )}
       
@@ -696,12 +783,8 @@ function ModelCard({ title, description, isRecommended = false, recommendedFor, 
         <p className="text-sm sm:text-base text-slate-700 leading-relaxed font-medium">{description}</p>
       </div>
       
-      {/* Accent line on hover */}
-      <div className={`absolute bottom-0 left-0 right-0 h-1 ${
-        isRecommended 
-          ? 'bg-gradient-to-r from-vbs-blue via-vbs-green to-vbs-blue' 
-          : 'bg-gradient-to-r from-slate-300 to-slate-400'
-      } opacity-0 group-hover:opacity-100 transition-opacity duration-300`}></div>
+      {/* Accent line on hover - Same for both */}
+      <div className="absolute bottom-0 left-0 right-0 h-1 bg-gradient-to-r from-vbs-blue via-vbs-green to-vbs-blue opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
     </div>
   );
 }
